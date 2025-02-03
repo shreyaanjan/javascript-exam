@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href="./assets/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body class="d-flex align-items-center justify-content-center m-t-200">
+    <div class="box w-50 w-50">
+        <div class="calc mt-5 ">
+            <h1 class="mt-5 fw-bold text-center">CALCULATOR</h1>
+            <div class="container">
+                <form action="">
+                    <div class="fw-bold text-center">Value 1 : <input type="text" class="w-50 my-3" id="val-1"></div>
+                    <div class="fw-bold text-center">Value 2 : <input type="text" class="w-50 my-3" id="val-2"></div>
+                    <div class="fw-bold text-center">Answer : <input type="text" class="w-50 my-3" id="ans"></div>
+                    <div class="my-3 text-center">
+                        <button type="button" class="btn btn-primary" type="button" id="add">+</button>
+                        <button type="button" class="btn btn-primary" type="button" id="sub">-</button>
+                        <button type="button" class="btn btn-primary" type="button" id="mul">*</button>
+                        <button type="button" class="btn btn-primary" type="button" id="div">/</button>
+                        <button type="button" class="btn btn-primary" type="button" id="cls">Clear</button>
+                    </div>
+                </form>
+    
+            </div>
+        </div>
+    
+    </div>
+
+    <script src="./assets/js/jquery.js"></script>
+    <script>
+        let e1 = document.getElementById("val-1");
+        let e2 = document.getElementById("val-2");
+        let ansElement = document.getElementById("ans");
+
+        function addition(v1, v2, ele) {
+            ele.value = v1 + v2;
+        }
+
+        function subtraction(v1, v2, ele) {
+            ele.value = v1 - v2;
+        }
+
+        function multiplication(v1, v2, ele) {
+            ele.value = v1 * v2;
+        }
+
+        function division(v1, v2, ele) {
+            ele.value = v1 / v2;
+        }
+
+        $("#add").on("click", function () {
+            let v1 = Number(e1.value);
+            let v2 = Number(e2.value);
+            addition(v1, v2, ansElement);
+        })
+
+        $("#sub").on("click", function () {
+            let v1 = Number(e1.value);
+            let v2 = Number(e2.value);
+            subtraction(v1, v2, ansElement);
+        })
+
+        $("#mul").on("click", function () {
+            let v1 = Number(e1.value);
+            let v2 = Number(e2.value);
+            multiplication(v1, v2, ansElement);
+        })
+
+        $("#div").on("click", function () {
+            let v1 = Number(e1.value);
+            let v2 = Number(e2.value);
+            division(v1, v2, ansElement);
+        })
+
+        $("#cls").on("click", function () {
+            e1.value = "";
+            e2.value = "";
+            ansElement.value = "";
+        })
+    </script>
+</body>
+
+</html>
